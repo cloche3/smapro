@@ -1,6 +1,6 @@
 interface buttonProps {
   btnText: string
-  btnFunc: any
+  btnFunc: VoidFunction
 }
 
 const Button = ({ btnText, btnFunc }: buttonProps) => {
