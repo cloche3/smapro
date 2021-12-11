@@ -2,8 +2,14 @@ import type { NextPage } from 'next'
 // import Head from 'next/head'
 import Image from 'next/image'
 import topImage from '../assets/topImage.png'
+import Button from '../components/Button'
 
 const Home: NextPage = () => {
+  const buttonText = 'ログインする'
+  const loginFunc = () => {
+    console.log('Loginしました')
+  }
+
   return (
     <div className=" justify-center mt-60 flex">
       <div className="flex flex-col text-gray-900">
@@ -12,9 +18,7 @@ const Home: NextPage = () => {
           金沢工業大学のレンタルスペースを予約できるアプリ
         </p>
         <div className="flex flex-col mt-16">
-          <button className=" text-sm font-semibold border-2 w-52 h-12 border-slate-800 rounded">
-            ログインする
-          </button>
+          <Button btnFunc={loginFunc} btnText={buttonText} />
           <p className=" text-sm font-bold mt-7">
             ※金沢工業大学関係者のみ利用可能です
           </p>
