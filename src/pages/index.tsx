@@ -1,11 +1,5 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { NextPage } from 'next'
 import { signOut } from '../utils/firebase'
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {},
-  }
-}
 
 const Page: NextPage = () => {
   return (

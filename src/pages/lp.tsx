@@ -1,13 +1,7 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { NextPage } from 'next'
 import Image from 'next/image'
 import topImage from '../assets/topImage.png'
 import Button from '../components/Button'
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {},
-  }
-}
 
 const Page: NextPage = () => {
   return (
