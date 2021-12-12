@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
-import { VFC } from 'react'
+import { useState, VFC } from 'react'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import { signOut } from '../firebase/auth'
@@ -13,6 +13,11 @@ const PerformingStudio = dynamic(
 )
 
 const TabList: VFC = () => {
+  const [dialog, setDialog] = useState(false)
+
+  const openDialog = () => {
+    setDialog(true)
+  }
   return (
     <>
       <div className="flex gap-4 mb-4" role="tablist">
@@ -37,7 +42,7 @@ const TabList: VFC = () => {
         role="tabpanel"
         tabIndex={0}
       >
-        <PerformingStudio onCellClick={() => console.log('click')} />
+        <PerformingStudio onCellClick={openDialog} />
       </div>
     </>
   )
