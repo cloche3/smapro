@@ -1,15 +1,14 @@
-interface buttonProps {
-  btnText: string
-  btnFunc: VoidFunction
-}
+import { ButtonHTMLAttributes, VFC } from 'react'
 
-const Button = ({ btnText, btnFunc }: buttonProps) => {
+type Props = ButtonHTMLAttributes<HTMLButtonElement>
+
+const Button: VFC<Props> = ({ children, onClick }) => {
   return (
     <button
       className=" text-sm font-semibold border-2 w-52 h-12 border-slate-800 rounded"
-      onClick={btnFunc}
+      onClick={onClick}
     >
-      {btnText}
+      {children}
     </button>
   )
 }
