@@ -5,7 +5,7 @@ import { signOut } from '../firebase/auth'
 const Page: NextPage = () => {
   return (
     <div>
-      <Header/>
+      <Header />
       <button onClick={signOut}>ログアウト</button>
     </div>
   )
