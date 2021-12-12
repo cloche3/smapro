@@ -1,10 +1,5 @@
-import { FirebaseApp, initializeApp } from 'firebase/app'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import { env } from './env'
-
-const app = globalThis.window
-  ? initializeApp(JSON.parse(env.FIREBASE_CONFIG))
-  : ({} as FirebaseApp)
+import { app } from './app'
 
 export const auth = getAuth(app)
 

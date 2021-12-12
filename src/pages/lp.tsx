@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import topImage from '../assets/topImage.png'
 import Button from '../components/Button'
+import { signIn } from '../firebase/auth'
 
 const Page: NextPage = () => {
   return (
@@ -12,7 +13,7 @@ const Page: NextPage = () => {
           金沢工業大学のレンタルスペースを予約できるアプリ
         </p>
         <div className="flex flex-col mt-16">
-          <Button>ログインする</Button>
+          <Button onClick={signIn}>ログインする</Button>
           <p className=" text-sm font-bold mt-7">
             ※金沢工業大学関係者のみ利用可能です
           </p>

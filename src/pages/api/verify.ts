@@ -1,4 +1,4 @@
-import { admin } from '../../utils/firebase-admin'
+import { admin } from '../../firebase/admin'
 import { router } from '../../utils/router'
 
 export default router({

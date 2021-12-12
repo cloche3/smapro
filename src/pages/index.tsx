@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { signOut } from '../utils/firebase'
+import { signOut } from '../firebase/auth'
 
 const Page: NextPage = () => {
   return (

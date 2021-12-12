@@ -1,6 +1,6 @@
 import { serialize } from 'cookie'
 import { z } from 'zod'
-import { admin } from '../../utils/firebase-admin'
+import { admin } from '../../firebase/admin'
 import { router } from '../../utils/router'
 
 // Set session expiration to 5 days.
