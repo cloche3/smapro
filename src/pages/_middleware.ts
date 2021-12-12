@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
+
+  if (req.url.startsWith('/api')) return res
+
   const idToken: string | undefined = req.cookies['__session']
 
   if (!idToken) return NextResponse.rewrite('/lp')
