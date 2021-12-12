@@ -5,7 +5,7 @@ import Button from './Button'
 const Popmenu = () => {
   const checkButton = () => console.log('ボタンが押されました')
   return (
-    <div className=" flex flex-col space-y-2 ">
+    <div className=" flex flex-col space-y-2">
       <div className=" flex justify-center h-12 border-4 border-black rounded">
         <div className=" flex justify-center m-2">
           <Icon path={mdiClockEditOutline} size={1} />
