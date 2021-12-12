@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { useState, VFC } from 'react'
 import Button from '../components/Button'
 import Header from '../components/Header'
+import ReserveDialog from '../components/ReserveDialog'
 import { signOut } from '../firebase/auth'
 
 const PerformingStudio = dynamic(
@@ -18,6 +19,7 @@ const TabList: VFC = () => {
   const openDialog = () => {
     setDialog(true)
   }
+
   return (
     <>
       <div className="flex gap-4 mb-4" role="tablist">
@@ -43,6 +45,7 @@ const TabList: VFC = () => {
         tabIndex={0}
       >
         <PerformingStudio onCellClick={openDialog} />
+        {dialog && <ReserveDialog close={() => setDialog(false)} />}
       </div>
     </>
   )

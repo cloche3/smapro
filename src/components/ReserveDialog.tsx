@@ -1,4 +1,5 @@
 import { mdiWindowClose } from '@mdi/js'
+import { VFC } from 'react'
 import { useForm } from 'react-hook-form'
 import IconButton from './IconButton'
 
@@ -10,13 +11,15 @@ type Data = {
   endMinuts: string
 }
 
-const ReserveDialog = () => {
+const ReserveDialog: VFC<{ close: () => void }> = ({ close }) => {
   const { register, handleSubmit } = useForm<Data>()
+
   return (
-    <div className=" absolute border-4 border-black rounded-md w-80 h-auto ">
+    <div className=" absolute border-4 border-black rounded-md w-80 h-auto left-0 right-0 mx-auto z-50 bg-white top-24">
       <div className="relative">
         <IconButton
           className="justify-item-end"
+          onClick={close}
           path={mdiWindowClose}
           size={1}
         />
