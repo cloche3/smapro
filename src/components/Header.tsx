@@ -1,11 +1,14 @@
 import { mdiBellOutline, mdiCalendarBlankOutline } from '@mdi/js'
 import Icon from '@mdi/react'
 import Image from 'next/image'
+import { useState } from 'react'
 import { useUser } from '../hooks/useUser'
 import Button from './Button'
+import PopMenu from './PopMenu'
 
 const Header = () => {
   const [user] = useUser()
+  const [open, setOpen] = useState(false)
 
   const checkButton = () => console.log('ボタンが押されました')
 
@@ -21,15 +24,18 @@ const Header = () => {
         </Button>
         <Icon className="" path={mdiBellOutline} size={1} />
         {user?.photoURL && (
-          <button>
-            <Image
-              alt={`${user.displayName}のアイコン`}
-              className="rounded-full"
-              height={48}
-              src={user.photoURL}
-              width={48}
-            />
-          </button>
+          <div className="relative">
+            <button onClick={() => setOpen((value) => !value)}>
+              <Image
+                alt={`${user.displayName}のアイコン`}
+                className="rounded-full"
+                height={48}
+                src={user.photoURL}
+                width={48}
+              />
+            </button>
+            {open && <PopMenu />}
+          </div>
         )}
       </div>
     </header>

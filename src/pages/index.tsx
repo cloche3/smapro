@@ -4,7 +4,6 @@ import { useState, VFC } from 'react'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import ReserveDialog from '../components/ReserveDialog'
-import { signOut } from '../firebase/auth'
 
 const PerformingStudio = dynamic(
   () => import('../components/PerformingStudio'),
@@ -59,7 +58,6 @@ const Page: NextPage = () => {
         <h2 className="font-bold text-xl mb-4">現在の利用状況</h2>
         <TabList />
       </div>
-      <button onClick={signOut}>ログアウト</button>
     </div>
   )
 }
